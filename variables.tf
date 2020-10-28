@@ -7,7 +7,7 @@
 
 # 2  secret_key
 # variable "secret_key" {
-#  default = "23n62zuwus0cbXElT1wEjq11sRw6aumObB9LkGm9"
+#  default = ""
 # }
 
 # 3  region
