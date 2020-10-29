@@ -118,6 +118,15 @@ resource "aws_default_security_group" "SSH" {
     to_port     = 22
     protocol    = "tcp"
   } // Terraform removes the default rule
+
+  ingress {
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port = 80
+    to_port   = 80
+    protocol  = "tcp"
+
+ }// Adding TCP in security group for nginx
+
   egress {
     from_port   = 0
     to_port     = 0
