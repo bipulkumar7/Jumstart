@@ -106,7 +106,7 @@ resource "aws_instance" "node" {
 }
 }
 
-# 9.  Creating security group  allowing SSH & TCP port 80
+# 10.  Creating security group  allowing SSH & TCP port 80
 resource "aws_default_security_group" "SSH" {
   # name        = "SSH"
   # description = "Allow SSH inbound traffic"
