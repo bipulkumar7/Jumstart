@@ -76,7 +76,7 @@ resource "aws_instance" "node" {
     Name = "node0"
   }
 
-# 8. Placing file at ec2  instances
+# 8. Placing file inside ec2  instances
  provisioner "file" {
     source      = "script.sh"
     destination = "/tmp/script.sh"
@@ -90,7 +90,7 @@ resource "aws_instance" "node" {
 
 }
 
-# 9. Executing  file to ec2 instances
+# 9. Executing  file inside ec2 instances
  provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script.sh",
@@ -106,7 +106,7 @@ resource "aws_instance" "node" {
 }
 }
 
-# 9.  Creating security group & allowing SSH
+# 9.  Creating security group  allowing SSH & TCP port 80
 resource "aws_default_security_group" "SSH" {
   # name        = "SSH"
   # description = "Allow SSH inbound traffic"
@@ -134,7 +134,7 @@ resource "aws_default_security_group" "SSH" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "allow_ssh"
+    Name = "allow_ssh_tcp"
   }
 }
 
